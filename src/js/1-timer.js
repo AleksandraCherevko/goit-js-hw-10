@@ -69,10 +69,11 @@ function start() {
 
     if (countdown < 0) {
       clearInterval(timerId);
+      startBtn.disabled = true;
 
       return;
     }
-
+    startBtn.disabled = true;
     updateTimerInterface(convertMs(countdown));
   }, 1000);
 }
