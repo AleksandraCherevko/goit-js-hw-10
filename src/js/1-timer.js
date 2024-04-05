@@ -10,10 +10,11 @@ const refs = {
   hours: document.querySelector('[data-hours]'),
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
+  calendar: document.querySelector('#datetime-picker'),
 };
 
 let userSelectedDate = Date.now();
-startBtn.disabled = false;
+startBtn.disabled = true;
 let currentTime = Date.now();
 let timerId = null;
 
@@ -72,6 +73,7 @@ function start() {
       return;
     }
     startBtn.disabled = true;
+    refs.calendar.disabled = true;
     updateTimerInterface(convertMs(countdown));
   }, 1000);
 }
